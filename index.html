@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Analysis Portfolio</title>
     <style>
-        /* CSS for Resume Button */
+        /* CSS for Buttons */
         .header-button {
             background-color: #3498db;
             color: #fff;
@@ -19,8 +19,12 @@
 
         .header-button:hover {
             background-color: #2980b9;
+            transform: scale(1.05);
         }
-
+        
+        .self {
+            padding-top: 10px;
+        }
         /* CSS for Soft Color Palette */
         body {
             background-color: #f5f5f5;
@@ -40,7 +44,7 @@
         }
         nav {
             background-color: #f5f5f5;
-            padding: 20px;
+            padding: 10px;
             width: 20%;
             border-radius: 10px;
         }
@@ -50,6 +54,18 @@
         }
         nav li {
             margin-bottom: 20px;
+        }
+        a {
+            text-decoration: none;
+            border: 2px solid transparent;
+            border-radius: 25px;
+            transition: border 0.3s, background-color 0.3s, transform 0.1s ease;
+        }
+        a:hover {
+            border: 2px solid #3498db;
+            padding: 7px;
+            background-color: transparent;
+            transform: scale(1.05);
         }
         .content {
             padding: 40px;
@@ -108,21 +124,27 @@
         .arrow.left {
             top: 50%;
             left: 10px;
-            transform: translateY(-50%);
             z-index: 1; /* Ensure it's clickable */
         }
         .arrow.right {
             top: 50%;
             right: 10px;
-            transform: translateY(-50%);
+        }
+        .arrow.left:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+        .arrow.right:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
-    <header style="display:flex; justify-content: space-evenly;">
+    <header style="display:flex; justify-content:space-around;">
         <h1>Constin Liu</h1>
         <nav>
-            <ul style="display: flex; list-style-type: none; padding: 0; justify-content: center;">
+            <ul style="display: flex; list-style-type: none; justify-content: center;">
                 <li style="margin-right: 20px;"><a href="#about" title="About Me">About</a></li>
                 <li style="margin-right: 20px;"><a href="#projects" title="My Projects">Projects</a></li>
                 <li><a href="#contact" title="Contact Me">Contact</a></li>
@@ -130,11 +152,11 @@
         </nav>
     </header>
 
-    <div class="top-page" style="justify-content: space-evenly; display: flex">
+    <div class="top-page" style="justify-content: space-evenly; display: flex; max-width: 1550px">
         <div class="content" id="about">
             <h3>Hello!</h3>
-            <p>I'm an aspiring <b>data scientist and analyst</b> with interests in <b>healthcare, biotech, deep learning</b>, and <b>finance</b>. I'm known for having <b>independent initiative, 
-                genuine curiosity</b>, and <b>dynamic collaboration skills.</b></p>
+            <p>I'm an aspiring <b>data scientist and analyst</b> with interests in <b>biotech, deep learning, healthcare management,</b> and <b>finance</b>. I'm known for having <b>independent initiative, 
+                genuine curiosity,</b> and <b>dynamic collaboration skills.</b></p>
             <p>I have several years of experience doing microbiology research, software development, and data analysis. I'm seeking to enter the <b>healthcare, biotech, and finance sectors</b>.</p>
             <p>On the side, I'm a casual classical pianist and sometimes make music and video games!</p>
             <br>
@@ -157,13 +179,13 @@
         </div>
     </div>
 
-    <div class="content" id="projects">
+    <div class="content" id="projects" style="max-width: 1550px;">
         <h2>Recent Projects</h2>
         <div class="projects-container">
             <div class="arrow left" id="prevProject">&#9664;</div>
             <div class="projects-list">
                 <div class="project-item">
-                    <h3>Political Finance Data Analysis</h3>
+                    <h3>California Politics: An Analysis of Financial Trends</h3>
                     <p style="margin-left: 10%; margin-right: 10%"><b>Goal:</b> Find insights into the financial trends of municipal and state level elections, lobbying efforts</p>
                     <p style="margin-left: 10%; margin-right: 10%"><b>Key Skills:</b> Data Processing, Data Visualization, SQL, Microsoft Access + Excel, Python, APIs</p>
                     <img style="max-width: 600px; max-height: 400px;" src="images/polisci.png">
@@ -257,11 +279,30 @@
         updateIndicatorDot();
     </script>
 
+<script>
+    // JavaScript for Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+
 <div class="content" id="contact">
     <h3>Contact me!</h3>
     <p>constinliu1@gmail.com</p>
     <p>+1 (925) 487-4684</p>
-    <a href="https://www.linkedin.com/in/constin-liu-7a5191189/ ">My LinkedIn</a>
+    <a href="https://www.linkedin.com/in/constin-liu-7a5191189/ ">LinkedIn</a>
 </div>
 </body>
 </html>
