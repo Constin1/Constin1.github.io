@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Graduating Student</title>
+    <title>Data Analysis Portfolio</title>
     <style>
         /* CSS for Soft Color Palette */
         body {
@@ -12,8 +12,8 @@
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column; /* Stack content vertically */
-            align-items: center; /* Center content horizontally */
+            flex-direction: column;
+            align-items: center;
         }
         header {
             background-color: #3498db;
@@ -40,55 +40,174 @@
             border-radius: 10px;
             margin: 20px;
             width: 75%;
+            position: relative;
+        }
+        /* CSS for Projects List */
+        .projects-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .projects-list {
+            display: flex;
+            border-radius: 10px;
+            width: 400%; /* Display all project items at once */
+            transition: transform 0.3s ease;
+        }
+        .project-item {
+            flex: 0 0 25%; /* Show one project item at a time */
+            text-align: center;
+        }
+        /* Navigation indicator */
+        .navigation-indicator {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .indicator-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #3498db;
+            border-radius: 50%;
+            margin: 0 5px;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+        .indicator-dot.active {
+            opacity: 1;
+        }
+        /* Navigation arrows */
+        .arrow {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(52, 152, 219, 0.7); /* Slightly transparent */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: #fff;
+        }
+        .arrow.left {
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            z-index: 1; /* Ensure it's clickable */
+        }
+        .arrow.right {
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Graduating Student's Portfolio</h1>
-        <p>Welcome to my portfolio website</p>
+        <h1>Constin Liu - Data Science Portfolio</h1>
     </header>
 
-    <nav style="font-family: 'georgia'; font-size: 18px;">
-        <ul style="display: flex; list-style-type: none; justify-content: space-evenly;">
-            <li><a href="#about" title="About Me">About</a></li>
-            <li><a href="#projects" title="My Projects">Projects</a></li>
-            <li><a href="#skills" title="My Skills">Skills</a></li>
+    <nav style="font-family: 'Your Random Font', sans-serif; font-size: 18px;">
+        <ul style="display: flex; list-style-type: none; padding: 0;">
+            <li style="margin-right: 20px;"><a href="#about" title="About Me">About</a></li>
+            <li style="margin-right: 20px;"><a href="#projects" title="My Projects">Projects</a></li>
+            <li style="margin-right: 20px;"><a href="#skills" title="My Skills">Skills</a></li>
             <li><a href="#contact" title="Contact Me">Contact</a></li>
         </ul>
     </nav>
-    
-
-    <div class="content" id="about">
-        <h2>About Me</h2>
-        <p>Hi, I'm [Your Name], a graduating college student passionate about [Your Passion].</p>
-        <p>I am excited to share my journey and accomplishments with you!</p>
-    </div>
 
     <div class="content" id="projects">
-        <h2>My Projects</h2>
-        <p>Here are some of the projects I've worked on:</p>
-        <ul>
-            <li>Project 1 - Description and key skills</li>
-            <li>Project 2 - Description and key skills</li>
-            <!-- Add more projects as needed -->
-        </ul>
+        <h2>Recent Projects</h2>
+        <div class="projects-container">
+            <div class="arrow left" id="prevProject">&#9664;</div>
+            <div class="projects-list">
+                <div class="project-item">
+                    <h3>Political Finance Data Analysis</h3>
+                    <p style="margin-left: 10%; margin-right: 10%"><b>Goal:</b> Find insights into the financing trends of municipal and state level elections, lobbying efforts. 
+                        Collect database of all office positions open to elected officials in California.</p>
+                    <p style="margin-left: 10%; margin-right: 10%"><b>Key Skills:</b> Microsoft Access + Excel, SQL Joins + Queries, data collection, 
+                        data cleaning, data wrangling, data visualization</p>
+                </div>
+                <div class="project-item">
+                    <h3>Project 2</h3>
+                    <p>Description and key skills for Project 2.</p>
+                </div>
+                <div class="project-item">
+                    <h3>Project 3</h3>
+                    <p>Description and key skills for Project 3.</p>
+                </div>
+                <div class="project-item">
+                    <h3>Project 4</h3>
+                    <p>Description and key skills for Project 4.</p>
+                </div>
+                <!-- Add more project items as needed -->
+            </div>
+            <div class="arrow right" id="nextProject">&#9654;</div>
+            <!-- Navigation indicator -->
+            <div class="navigation-indicator">
+                <div class="indicator-dot" data-index="0"></div>
+                <div class="indicator-dot" data-index="1"></div>
+                <div class="indicator-dot" data-index="2"></div>
+                <div class="indicator-dot" data-index="3"></div>
+                <!-- Add more indicator dots as needed -->
+            </div>
+        </div>
     </div>
 
-    <div class="content" id="skills">
-        <h2>My Skills</h2>
-        <p>Some of my key skills include:</p>
-        <ul>
-            <li>Skill 1</li>
-            <li>Skill 2</li>
-            <li>Skill 3</li>
-            <!-- Add more skills as needed -->
-        </ul>
-    </div>
+    <script>
+        const projectsList = document.querySelector('.projects-list');
+        const projectItems = document.querySelectorAll('.project-item');
+        const indicatorDots = document.querySelectorAll('.indicator-dot');
+        const prevProjectBtn = document.getElementById('prevProject');
+        const nextProjectBtn = document.getElementById('nextProject');
+        let currentIndex = 0;
 
-    <div class="content" id="contact">
-        <h2>Contact Me</h2>
-        <p>If you'd like to get in touch, you can reach me at [Your Email Address].</p>
-    </div>
+        // Function to update the displayed project
+        function updateProjectDisplay() {
+            const translateXValue = -currentIndex * 25; // 25% per project
+            projectsList.style.transform = `translateX(${translateXValue}%)`;
+        }
+
+        // Function to update the active indicator dot
+        function updateIndicatorDot() {
+            indicatorDots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        // Handle click on previous project button
+        prevProjectBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateProjectDisplay();
+                updateIndicatorDot();
+            }
+        });
+
+        // Handle click on next project button
+        nextProjectBtn.addEventListener('click', () => {
+            if (currentIndex < projectItems.length - 1) {
+                currentIndex++;
+                updateProjectDisplay();
+                updateIndicatorDot();
+            }
+        });
+
+        // Handle click on indicator dot
+        indicatorDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateProjectDisplay();
+                updateIndicatorDot();
+            });
+        });
+
+        // Initial display and active indicator dot
+        updateProjectDisplay();
+        updateIndicatorDot();
+    </script>
 </body>
 </html>
