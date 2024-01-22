@@ -42,6 +42,7 @@
             background-color: #f5f5f5;
             padding: 20px;
             width: 20%;
+            border-radius: 10px;
         }
         nav ul {
             list-style-type: none;
@@ -129,22 +130,30 @@
         </nav>
     </header>
 
-
-    <div class="content" id="about">
-        <h3>Hello!</h3>
-
-        <div class="buttons-container" style="display:flex; justify-content: space-evenly;">
-        <!-- Resume Button -->
-        <button class="header-button" onclick="openPopup('images/my resume.pdf', 'Resume')">Resume</button>
-        <!-- Coursework Button -->
-        <button class="header-button" onclick="openPopup('images/courses.pdf', 'Relevant Coursework')">Coursework</button>
-        <script>
-        // Function to open the resume pop-up in a new window
-        function openPopup(file, title) {
-            window.open(file, title, 'width=1280,height=720');
-        }
-        </script>
-        
+    <div class="top-page" style="justify-content: space-evenly; display: flex">
+        <div class="content" id="about">
+            <h3>Hello!</h3>
+            <p>I'm an aspiring <b>data scientist and analyst</b> with interests in <b>healthcare, biotech, deep learning</b>, and <b>finance</b>. I'm known for having <b>independent initiative, 
+                genuine curiosity</b>, and <b>dynamic collaboration skills.</b></p>
+            <p>I have several years of experience doing microbiology research, software development, and data analysis. I'm seeking to enter the <b>healthcare, biotech, and finance sectors</b>.</p>
+            <p>On the side, I'm a casual classical pianist and sometimes make music and video games!</p>
+            <br>
+            <div class="buttons-container" style="display:flex; justify-content: space-evenly;">
+            <!-- Resume Button -->
+            <button class="header-button" onclick="openPopup('images/my resume.pdf', 'Resume')">Resume</button>
+            <!-- Coursework Button -->
+            <button class="header-button" onclick="openPopup('images/courses.pdf', 'Relevant Coursework')">Coursework</button>
+            <script>
+            // Function to open the resume pop-up in a new window
+            function openPopup(file, title) {
+                window.open(file, title, 'width=1280,height=720');
+            }
+            </script>
+            </div>
+        </div>
+    
+        <div class="self">
+            <img style="max-height: 500px; border-radius: 20%" src="images/pic.jpg">
         </div>
     </div>
 
@@ -252,6 +261,7 @@
     <h3>Contact me!</h3>
     <p>constinliu1@gmail.com</p>
     <p>+1 (925) 487-4684</p>
+    <a href="https://www.linkedin.com/in/constin-liu-7a5191189/ ">My LinkedIn</a>
 </div>
 </body>
 </html>
