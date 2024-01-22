@@ -2,57 +2,93 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Data Science & Biotech Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Graduating Student</title>
+    <style>
+        /* CSS for Soft Color Palette */
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
+            align-items: center; /* Center content horizontally */
+        }
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 40px;
+            width: 100%;
+        }
+        nav {
+            background-color: #f5f5f5;
+            padding: 20px;
+            width: 20%;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav li {
+            margin-bottom: 20px;
+        }
+        .content {
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            margin: 20px;
+            width: 75%;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Data Science & Biotech Portfolio</h1>
-        <h2>Undergraduate Student in Data Science and Biotech</h2>
+        <h1>Graduating Student's Portfolio</h1>
+        <p>Welcome to my portfolio website</p>
     </header>
 
-    <main>
-        <section>
-            <h2>About Me</h2>
-            <p>
-            I am an undergraduate student with a focus on data science and biotech. My interest in these fields stems from a desire to contribute to innovations that can improve healthcare and enhance our understanding of biological systems.
-            </p>
-        </section>
+    <nav style="font-family: 'georgia'; font-size: 18px;">
+        <ul style="display: flex; list-style-type: none; justify-content: space-evenly;">
+            <li><a href="#about" title="About Me">About</a></li>
+            <li><a href="#projects" title="My Projects">Projects</a></li>
+            <li><a href="#skills" title="My Skills">Skills</a></li>
+            <li><a href="#contact" title="Contact Me">Contact</a></li>
+        </ul>
+    </nav>
+    
 
-        <section>
-            <h2>Projects</h2>
+    <div class="content" id="about">
+        <h2>About Me</h2>
+        <p>Hi, I'm [Your Name], a graduating college student passionate about [Your Passion].</p>
+        <p>I am excited to share my journey and accomplishments with you!</p>
+    </div>
 
-            <article>
-                <h3>Project 1: Genomic Data Analysis</h3>
-                <p>Using Python and R, I conducted an analysis on genomic data to find correlations between certain genetic mutations and disease risk.</p>
-            </article>
+    <div class="content" id="projects">
+        <h2>My Projects</h2>
+        <p>Here are some of the projects I've worked on:</p>
+        <ul>
+            <li>Project 1 - Description and key skills</li>
+            <li>Project 2 - Description and key skills</li>
+            <!-- Add more projects as needed -->
+        </ul>
+    </div>
 
-            <article>
-                <h3>Project 2: Biotech Market Prediction Model</h3>
-                <p>I created a machine learning model to predict the market trend in the biotech industry based on various features including R&D expenses, clinical trial results, and FDA approvals.</p>
-            </article>
+    <div class="content" id="skills">
+        <h2>My Skills</h2>
+        <p>Some of my key skills include:</p>
+        <ul>
+            <li>Skill 1</li>
+            <li>Skill 2</li>
+            <li>Skill 3</li>
+            <!-- Add more skills as needed -->
+        </ul>
+    </div>
 
-            <!-- Include more projects as needed -->
-        </section>
-
-        <section>
-            <h2>Skills</h2>
-            <ul>
-                <li>Data Analysis with Python and R</li>
-                <li>Machine Learning</li>
-                <li>Genomics</li>
-                <li>Biostatistics</li>
-                <!-- Include more skills as needed -->
-            </ul>
-        </section>
-
-        <section>
-            <h2>Contact</h2>
-            <p>Please feel free to reach out to me at <a href="mailto:email@example.com">email@example.com</a>.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 My Portfolio. All rights reserved.</p>
-    </footer>
+    <div class="content" id="contact">
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch, you can reach me at [Your Email Address].</p>
+    </div>
 </body>
 </html>
